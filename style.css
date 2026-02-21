@@ -5,8 +5,19 @@
     --primary-color: #4a90e2;
     --secondary-color: #50e3c2;
     --text-color: #333;
+    --card-bg: #ffffff;
     --white: #fff;
     --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --primary-color: #64b5f6;
+    --secondary-color: #4db6ac;
+    --text-color: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --white: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -19,14 +30,29 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 2rem 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
+    position: relative;
     text-align: center;
-    background-color: var(--white);
+    background-color: var(--card-bg);
     padding: 3rem 4rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 h1 {
