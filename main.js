@@ -2,12 +2,14 @@ const numbersContainer = document.getElementById('numbers-container');
 const generateButton = document.getElementById('generate-button');
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
+const themeText = document.getElementById('theme-text');
 
 // Theme Logic
 const setTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    themeText.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
 };
 
 const toggleTheme = () => {
